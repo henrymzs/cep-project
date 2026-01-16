@@ -1,33 +1,84 @@
-# App de Clima
+# App CEP
 
-Este é um **projeto de consulta de CEP** utilizando a [BrasilAPI](https://brasilapi.com.br/docs#tag/CEP), com o objetivo de exibir informações sobre a **localização** do usuário com base no CEP digitado.
+# 📄 Descrição
+Aplicação web simples para consulta de CEP utilizando a Brasil API, construída com HTML, CSS e JavaScript em um único arquivo.
 
-## Tecnologias Utilizadas
+# 💻 Sobre o projeto
+App CEP é um projeto prático criado para demonstrar o consumo de APIs públicas e manipulação do DOM com JavaScript vanilla.
 
-- **HTML** → Estrutura da página.
-- **CSS** → Estilização e centralização dos elementos.
-- **JavaScript** → Lógica de busca e integração com a API BrasilAPI.
+O objetivo foi criar uma aplicação minimalista e funcional que permite ao usuário buscar informações de endereço (estado, cidade e bairro) através de um CEP válido de 8 dígitos, consumindo a Brasil API de forma assíncrona.
+​
+# ⚙️ Funcionalidades
+- Busca de CEP através da Brasil API
 
-## Estrutura do Projeto
+- Validação de entrada (aceita apenas 8 dígitos)
 
-O projeto foi desenvolvido em **apenas um arquivo**, contendo:
-- Um **campo de entrada** (`input`) onde o usuário digita o CEP.
-- Um **botão de pesquisa** que aciona a requisição da API.
-- Um **container de resultados**, onde são exibidos os dados do CEP consultado.
+- Exibição de Estado, Cidade e Bairro
 
-## Estilização
+- Tratamento de erros (CEP inválido ou não encontrado)
 
-- Todos os elementos estão **centralizados** na tela.
-- As cores foram inspiradas em outro projeto que achei legal.
-- O design é **simples**, focado apenas na funcionalidade principal.
+# 🎨 Layout
+Interface simples com:
 
-## Como Funciona?
+![Desktop](./desktop.png) 
 
-1. O usuário digita um **CEP válido (8 dígitos)**.
-2. Clica no botão **"Pesquisar"**.
-3. O JavaScript faz a requisição à BrasilAPI.
-4. Se o CEP for válido, exibe informações como:
-   - **Estado**
-   - **Cidade**
-   - **Bairro**
-5. Caso o CEP esteja incorreto, o usuário recebe um aviso.
+- Campo de input para CEP (apenas números)
+
+- Botão de pesquisa com hover effect
+
+- Área de resultados dinâmica
+
+# 🚀 Como executar o projeto
+Opção 1: Abrir diretamente no navegador
+1. Clone ou baixe o repositório:
+```bash
+https://github.com/henrymzs/cep-project.git
+```
+2. Abra o arquivo index.html diretamente no navegador
+
+Opção 2: Com Live Server (VSCode)
+1. Instale a extensão Live Server no VSCode
+2. Clique com botão direito no arquivo → "Open with Live Server"
+
+# 🛠 Tecnologias
+As seguintes ferramentas foram usadas na construção do projeto:
+
+Front-End
+- HTML5 - Estrutura semântica
+
+- CSS3 - Estilização inline com dark mode
+
+- JavaScript (ES6+)
+   - Fetch API para requisições assíncronas
+   - Async/Await
+   - Manipulação do DOM
+   - Validação de formulários
+
+- API Externa
+   - Brasil API - Consulta de CEPs brasileiros
+   
+# 💪 Como contribuir para o projeto
+1. Faça um fork do projeto
+
+2. Crie uma nova branch com sua feature:
+```bash
+git checkout -b feature/minha-feature
+```
+
+3. Commit suas mudanças:
+```bash
+git commit -m "feat: Minha nova feature"
+```
+
+4. Push para a branch:
+```bash
+git push origin feature/minha-feature
+```
+
+5. Abra um Pull Request
+
+# 🦸 Autor
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github)](https://github.com/henrymzs)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/henry-kaua)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:henrykaua21@gmail.com)
