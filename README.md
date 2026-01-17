@@ -20,7 +20,7 @@ O objetivo foi criar uma aplicação minimalista e funcional que permite ao usu�
 # 🎨 Layout
 Interface simples com:
 
-![Desktop](./desktop.png) 
+![Desktop](./src/assets/images/desktop.png) 
 
 - Campo de input para CEP (apenas números)
 

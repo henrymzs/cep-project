@@ -4,63 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Cep</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    input[type=number]::-webkit-outer-spin-button,
-    input[type=number]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #0D1117;
-        color: #FFFFFF;        
-    }
-
-
-    .search-box {
-        display: flex;
-        gap: 20px;
-    }
-
-    .search-box input {
-        border-radius: 6px;
-        border: 1px solid #eeee;
-        background-color: #001224;
-        color: #FFFFFF;
-        font-size: 16px;
-        padding: 8px 15px;
-    }
-
-    .btn {
-        font-size: 18px;
-        padding: 0px 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #66B2FF;
-        color: #FFFFFF;
-        transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-        background-color: #0b549c;
-    }
-
-    .title {
-        margin: 22px;
-        text-align: center;
-    }
-</style>
 <body>
     <div class="container">
         <h1 class="title">Site CEP</h1>
@@ -71,40 +16,5 @@
         <div id="ContainerCEP" style="margin-top: 18px;"></div>
     </div>
 </body>
-<script>
-    const containerCEP = document.getElementById('ContainerCEP');
-    const searchInput = document.getElementById("searchValue");
-    const searchButton = document.getElementById("searchBtn");
-    searchButton.addEventListener('click', async () => {
-        const searchValue = searchInput.value;
-        if (!searchValue || searchValue.length !== 8) {
-            alert('Por favor, insira um CEP válido com 8 digitos!');
-            return;
-        }
-        try {
-            const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${searchValue}`);
-            if (!response.ok) throw new Error(`Erro: ${response.status}`);
-            const cep = await response.json();
-            displayResults(cep);
-        } catch (error) {
-            console.error('Erro ao buscar CEP:', error);
-            alert('Não foi possível realizar a busca.');
-        }
-    });
-    function displayResults(cep) {
-        containerCEP.innerHTML = '';
-        if (!cep || cep.error) {
-            containerCEP.innerHTML = '<p>CEP não encontrado.</p>';
-            return;
-        }
-        const containerItem = document.createElement('div');
-        containerItem.innerHTML = `
-        <p><strong>Estado:</strong> ${cep.state}</p>
-        <p><strong>Cidade:</strong> ${cep.city}</p>
-        <p><strong>Bairro:</strong> ${cep.neighborhood}</p>
-        `;
-        containerCEP.appendChild(containerItem);
-    }
-</script>
-
+<script type="module" src="./src/scripts/main.js"></script>
 </html>
